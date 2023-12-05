@@ -1,15 +1,22 @@
-README_FILES = $(shell find . -name 'README.md' -not -path '*/node_modules/*' -not -path './.git/*')
+PORT = 3000
+NAME = javascript-api
+LINT = npm run lint
+TEST = npm run test
+RUN  = npm start
 
-all: spellcheck clean
+setup:
+	@npm install > /dev/null 2>&1
+	@echo "$(NAME) Setup complete"
 
-spellcheck: $(README_FILES)
-	# Foreach README.md file, run aspell
-	@for file in $(README_FILES); do \
-		aspell check --mode=markdown --lang=en "$${file}"; \
-	done
+lint:
+	$(LINT)
 
-clean:
-	# Remove all backup files created by aspell
-	@find . -name '*.md.bak' -exec rm -vf {} \;
+test:
+	$(TEST)
 
-.PHONY: all spellcheck clean
+run:
+	$(RUN)
+
+all: setup lint test run
+
+.PHONY: setup lint test run all

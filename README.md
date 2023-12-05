@@ -1,37 +1,20 @@
-# GitHub Actions for CI/CD
-This is the repository for the LinkedIn Learning course `GitHub Actions for CI/CD`. The full course is available from [LinkedIn Learning][lil-course-url].
+# 02_03 CI for JavaScript
 
-## What You Should Know
-- This is an intermediate level course.  
+Check node versions in the matrix strategy.
 
-- You will be expected to already have some experience working with a high-level language like Python, JavaScript, or Go.
+Update the matrix according to the versions needed for your project and the active versions as reported by [Node.js Release Working Group](https://github.com/nodejs/Release).
 
-- If you’re not an application developer, it will help if you’re familiar with the software development process.  This includes any experience with building, testing, or deploying software applications.
+For example, change:
 
-- You should be comfortable using the Git version control system and GitHub.  
+    strategy:
+      matrix:
+        node-version: [14.x, 16.x, 18.x]
 
-- You will be expected to already have some experience working with GitHub Actions.
+to:
 
-- If this is your first time working with GitHub Actions review this course:
-	- [Learning GitHub Actions](https://www.linkedin.com/learning/learning-github-actions-2/)
 
-- Exercise files are available:
-	- [Exercise Files](https://github.com/LinkedInLearning/github-actions-for-ci-cd-4375061)
- 	- Follow the instructions for each chapter for steps to use the files.  For example, you may be asked to create new repositories for demonstrations. 
+    strategy:
+      matrix:
+        node-version: [16.x, 18.x, 19.x]
 
-## Instructions
-This repository has folders for each of the videos in the course.
 
-### Folders
-The folders are structured to correspond to the videos in the course. The naming convention is `CHAPTER#_MOVIE#`. For example, the folder named `02_03` corresponds to the second chapter and the third video in the second chapter.
-
-## Installing
-1. To use these exercise files, you must have the following installed:
-	- git
-1. Clone this repository into your local machine using the terminal (Mac), CMD (Windows), or a GUI tool like [SourceTree](https://www.sourcetreeapp.com/).
-
-[0]: # (Replace these placeholder URLs with actual course URLs)
-
-[lil-course-url]: https://www.linkedin.com/learning/
-[lil-thumbnail-url]: http://
-:)
